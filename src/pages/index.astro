@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import yamiLogo from '/src/assets/images/yami.gif';
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
 ---
 <Navigation />
 <body>
@@ -16,3 +17,23 @@ import Navigation from '../components/Navigation.astro';
 	</ul>
 	</div>
 	</body>
+	<style>
+			.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 50%;
+	}
+	div.stuffList {
+	  text-align: center;
+	}
+	ul.list {
+	  display: inline-block;
+	  text-align: left;
+	}
+	body {
+
+	  text-align: center;
+	}
+	</style>
+<Foot />

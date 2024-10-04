@@ -1,8 +1,8 @@
 ---
+const { frontmatter } = Astro.props;
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 ---
 <Navigation />
-<body>
-<p> this is text</p>>
-	</body>
+<h1>{frontmatter.title}</h1>
+<slot />

@@ -1,9 +1,8 @@
 	  body {
 	  color: var(--srcery-bright-white);
 	  background: var(--srcery-black);
-	  text-align: center;
 	}
-	  a {
+	a {
 	  color: var(--srcery-blue);
 	}
 	a:visited {
@@ -12,20 +11,7 @@
 	a:hover {
 	  color: var(--srcery-bright-blue);
 	}
-	.center {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  width: 50%;
-	}
 	
-	div.stuffList {
-	  text-align: center;
-	}
-	ul.list {
-	  display: inline-block;
-	  text-align: left;
-	}
 	/* srcery_css.css */
 	:root {
 	  --srcery-black:          #1C1B19;
