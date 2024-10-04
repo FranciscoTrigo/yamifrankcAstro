@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/markdownLayout.astro
+title: About
 ---
 
 # About

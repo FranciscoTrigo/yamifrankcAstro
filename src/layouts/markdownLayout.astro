@@ -2,7 +2,9 @@
 const { frontmatter } = Astro.props;
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
 ---
 <Navigation />
 <h1>{frontmatter.title}</h1>
 <slot />
+<Foot />
