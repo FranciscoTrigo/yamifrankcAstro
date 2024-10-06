@@ -1,6 +1,9 @@
-	  body {
+
+	 
+	 body {
 	  color: var(--srcery-bright-white);
 	  background: var(--srcery-black);
+	  font-family: 'Iosevka', monospace;
 	}
 	a {
 	  color: var(--srcery-blue);
