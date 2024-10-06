@@ -1,10 +1,19 @@
 ---
-const { frontmatter } = Astro.props;
+
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
+
+import { formatDate } from '../utils/formatDate.js'; // Utility to format dates
+const { frontmatter, content } = Astro.props;
+const lastModified = frontmatter.lastModified ? formatDate(frontmatter.lastModified) : 'Unknown';
+---
+
 ---
 <Navigation />
 <h1>{frontmatter.title}</h1>
+<p>Last Modified: {lastModified}</p>
+
 <slot />
 <Foot />
+<!-- <p>Email me at <a href={`mailto:contact@yamifrankc.com?subject=${frontmatter.title}`}>Send email</a></p> -->

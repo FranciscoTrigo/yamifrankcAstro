@@ -5,7 +5,7 @@ title: Things I use
  
 # I use stuff
 
-- Linux
+- Linux (Arch and NixOS)
 - Windows
 
 ## Hardware

@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.10"
+    "astro": "^4.15.10",
+    "dayjs": "^1.11.13",
+    "simple-git": "^3.27.0"
   }
 }
