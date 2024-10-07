@@ -13,15 +13,13 @@ import Foot from '../components/Foot.astro';
 
 const { frontmatter, content } = Astro.props;
 ---
-
-
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@16.0.0/dist/iosevka.css">
 
 <title>{frontmatter.title}</title>
 <Navigation />
 
 <h1>{frontmatter.title}</h1>
+<h2>{frontmatter.subtitle}</h2>
 
 <p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
 <p>Last modified: {lastModified}</p>
