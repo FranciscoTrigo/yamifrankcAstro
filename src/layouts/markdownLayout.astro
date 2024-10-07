@@ -12,10 +12,6 @@ import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
 
 const { frontmatter, content } = Astro.props;
-import  githubRepoUrl  from '../../astro.config.mjs';
-const fileName = Astro.url.pathname; // Get the current URL or route
-
-const githubLink = `${githubRepoUrl}${fileName}.md`; // Assuming markdown files are in /src/pages/
 ---
 
 
@@ -32,7 +28,5 @@ const githubLink = `${githubRepoUrl}${fileName}.md`; // Assuming markdown files 
 <slot />
 
 <!-- <p>Email me at <a href={`mailto:contact@yamifrankc.com?subject=${frontmatter.title}`}>Send email</a></p> -->
-<p>
-    Found an issue? <a href={githubLink} target="_blank">Edit this page on GitHub</a>.
-  </p>
+
 <Foot />
