@@ -1,8 +1,11 @@
 ---
+import { getRandomPage } from '../utils/getRandomPage';
+const randomPage = getRandomPage();
 ---
 <footer>This site has been created by <a href="https://yamifrankc.com/">YamiFrankc</a> using Astro.
 <br>
 <p>If you think this page could use a change, submit it at <a href="https://github.com/FranciscoTrigo/yamifrankcAstro/">this repo.</a></p>
+<p><a href={randomPage}>Go to a random page</a></p>
 </footer>
 
 <style>
