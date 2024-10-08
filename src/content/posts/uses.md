@@ -2,7 +2,7 @@
 title: Things I use
 datePublished: 2024-10-04
 dateModified: 2024-10-05
-tags: ["setup", "yamifrankc"]
+tags: ["setup", "yamifrankc", "tech"]
 ---
  
 # I use stuff
