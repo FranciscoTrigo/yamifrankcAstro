@@ -18,9 +18,10 @@ const { frontmatter, content } = Astro.props;
 <h2>{frontmatter.subtitle}</h2>
 
 <p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
+<p>Modified: {new Date(frontmatter.dateModified).toISOString().split('T')[0]}</p>
 
 <slot />
 
-<!-- <p>Email me at <a href={`mailto:contact@yamifrankc.com?subject=${frontmatter.title}`}>Send email</a></p> -->
+<p>Email me about this page at <a href={`mailto:contact@yamifrankc.com?subject=${frontmatter.title}`}>Send email</a></p>
 
 <Foot />

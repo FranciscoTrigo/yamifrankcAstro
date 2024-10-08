@@ -2,6 +2,8 @@
 title: About
 email: contact
 datePublished: 2024-10-04
+dateModified: 2024-10-04
+tags: ["yamifrankc"]
 ---
 
 My name is YamiFrankc and this is my website.  

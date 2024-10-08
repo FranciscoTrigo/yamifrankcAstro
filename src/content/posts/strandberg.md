@@ -1,7 +1,8 @@
 ---
 title: Strandberg
 datePublished: 2024-10-06
-tags: ["music"]
+dateModified: 2024-10-06
+tags: ["music", "hobby"]
 ---
 
 I have a Strandberg guitar.  

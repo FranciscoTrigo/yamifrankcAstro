@@ -1,6 +1,8 @@
 ---
 title: Links
 datePublished: 2024-10-04
+dateModified: 2024-10-04
+tags: ["cool"]
 ---
 
 - [Memeboard](https://memeboard.yamifrankc.com) - A fun soundboard
