@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/markdownLayout.astro
 title: Things I use
 datePublished: 2024-10-04
 ---

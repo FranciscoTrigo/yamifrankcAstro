@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/markdownLayout.astro
 title: Links
 datePublished: 2024-10-04
 ---
