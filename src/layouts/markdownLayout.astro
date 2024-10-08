@@ -3,10 +3,6 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
-const lastModified = dayjs()
-  .utc(Astro.props.frontmatter.lastModified)
-  .format("YYYY-MM-DD HH:mm");
-
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
@@ -22,7 +18,6 @@ const { frontmatter, content } = Astro.props;
 <h2>{frontmatter.subtitle}</h2>
 
 <p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
-<p>Last modified: {lastModified}</p>
 
 <slot />
 

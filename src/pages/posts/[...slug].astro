@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import markdownLayout from '../../layouts/markdownLayout.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('posts');
@@ -8,11 +7,21 @@ export async function getStaticPaths() {
     params: { slug: entry.slug }, props: { entry },
   }));
 }
-
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
+const { Content, remarkPluginFrontmatter } = await entry.render();
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  //  .format("HH:mm:ss DD MMMM YYYY UTC");
+   .format("YYYY-MM-DD HH:mm");
+
+import MarkdownLayout from '../../layouts/markdownLayout.astro'
 ---
 
-<markdownLayout  frontmatter={entry.data}>
+
+<MarkdownLayout frontmatter={entry.data}>
+  <p>Last Modified: {lastModified} </p>
   <Content />
-</markdownLayout>
+</MarkdownLayout>
