@@ -17,3 +17,4 @@ datePublished: 2024-10-04
 - Samsung Galaxy S24 Ultra
 - Custom Gaming PC
 - Server rack
+- Nintendo
