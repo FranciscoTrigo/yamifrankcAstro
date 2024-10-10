@@ -4,6 +4,8 @@ import yamiLogo from '/src/assets/images/yami.gif';
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
+import { getCollection } from 'astro:content';
+const blogEntries = await getCollection('posts');
 
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@16.0.0/dist/iosevka.css">
@@ -12,7 +14,23 @@ import Foot from '../components/Foot.astro';
 
 <title>YamiFrankc</title>
 <body>
-<Image src={yamiLogo} alt="A col logo." />
+<Image src={yamiLogo} alt="A cool logo." />
+<h3>New or recently updated posts:</h3>
+<ul class="title-list"></ul>
+	{blogEntries.map(blogPostEntry => (
+	  <li>
+		<div class="post-header">
+			<span class="title"><a href={`/posts/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a></span>
+			<span class="date">{blogPostEntry.data.datePublished}</span>
+			</div>
+			<ul class="tag-list">
+				{blogPostEntry.data.tags.map(tag => (
+				<li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
+				))}
+			</ul>
+	  </li>
+	))}
+  </ul>
 
 </body>
 
@@ -23,16 +41,59 @@ import Foot from '../components/Foot.astro';
 	  margin-right: auto;
 	  width: 50%;
 	}
-	div.stuffList {
-	  text-align: center;
-	}
-	ul.list {
-	  display: inline-block;
-	  text-align: left;
-	}
+
+
 	body {
 
 	  text-align: center;
 	}
+
+
+	body {
+    font-family: Arial, sans-serif;
+}
+
+.title-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.title-list li {
+    margin-bottom: 20px; /* Add space between entries */
+}
+
+.post-header {
+    display: flex;
+    align-items: center; /* Align title and date on the same line */
+    margin-bottom: 8px; /* Add space between header and tags */
+}
+
+.title {
+    font-size: 1.5em; /* Make the title big */
+    font-weight: bold;
+    margin-right: 15px; /* Add space between title and date */
+}
+
+.date {
+    font-size: 0.9em; /* Slightly smaller than the title */
+    color: #888; /* Lighter color for the date */
+}
+
+.tag-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* Add space between tags */
+}
+
+.tag {
+    font-size: 0.8em; /* Make the tags smaller */
+    color: gray;
+    background-color: #f0f0f0; /* Optional: tag background for better appearance */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+
 	</style>
 <Foot />
