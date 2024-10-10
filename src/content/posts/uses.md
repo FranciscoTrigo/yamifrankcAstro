@@ -1,16 +1,17 @@
 ---
 title: Things I use
+subtitle: These I use
 datePublished: 2024-10-04
 dateModified: 2024-10-05
 tags: ["setup", "yamifrankc", "tech"]
 ---
  
-# I use stuff
+### I use stuff
 
 - Linux (Arch and NixOS)
 - Windows
 
-## Hardware
+### Hardware
 
 - Thinkpad X1 Carbon
 - Prusa 3D printer
