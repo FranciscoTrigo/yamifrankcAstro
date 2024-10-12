@@ -5,7 +5,21 @@ import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
 import { getCollection } from 'astro:content';
-const blogEntries = await getCollection('posts');
+const blogEntries = await getCollection('posts', ({ data }) => {
+  return data.draft !== false;
+})
+
+const recentPosts = blogEntries
+  .sort((a, b) => new Date(b.data.dateModified) - new Date(a.data.dateModified)) // Sort by dateUpdated in descending order
+  .slice(0, 5); // Limit to the 5 most recent posts
+
+export async function get() {
+  return {
+    body: JSON.stringify(recentPosts),
+  };
+}
+
+
 ---
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,14 +32,14 @@ const blogEntries = await getCollection('posts');
 <Image src={yamiLogo} alt="A cool logo." />
 <h3>New or recently updated posts:</h3>
 <ul class="title-list"></ul>
-	{blogEntries.map(blogPostEntry => (
+	{recentPosts.map(recentPosts => (
 	  <li>
 		<div class="post-header">
-			<span class="title"><a href={`/posts/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a></span>
-			<span class="date">{blogPostEntry.data.datePublished}</span>
+			<span class="title"><a href={`/posts/${recentPosts.slug}`}>{recentPosts.data.title}</a></span>
+			<span class="date">{recentPosts.data.datePublished}</span>
 			</div>
 			<ul class="tag-list">
-				{blogPostEntry.data.tags.map(tag => (
+				{recentPosts.data.tags.map(tag => (
 				<li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
 				))}
 			</ul>

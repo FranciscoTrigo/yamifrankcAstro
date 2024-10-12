@@ -4,6 +4,7 @@ subtitle: These I use
 datePublished: 2024-10-04
 dateModified: 2024-10-05
 tags: ["setup", "yamifrankc", "tech"]
+draft: true
 ---
  
 ### I use stuff

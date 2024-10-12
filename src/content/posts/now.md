@@ -3,6 +3,7 @@ title: Now
 datePublished: 2024-10-06
 dateModified: 2024-10-09
 tags: ["yamifrankc"]
+draft: true
 ---
 
 For now I am working as a consultant.  
