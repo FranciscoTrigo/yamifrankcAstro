@@ -4,7 +4,7 @@ email: contact
 datePublished: 2024-10-04
 dateModified: 2024-10-08
 tags: ["yamifrankc"]
-draft: true
+draft: false
 ---
 
 My name is YamiFrankc and this is my website.  

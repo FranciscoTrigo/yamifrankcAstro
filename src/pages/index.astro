@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
 import { getCollection } from 'astro:content';
 const blogEntries = await getCollection('posts', ({ data }) => {
-  return data.draft !== false;
+  return data.draft === false;
 })
 
 const recentPosts = blogEntries
@@ -31,12 +31,12 @@ export async function get() {
 <body>
 <Image src={yamiLogo} alt="A cool logo." />
 <h3>New or recently updated posts:</h3>
-<ul class="title-list"></ul>
+<ul class="title-list">
 	{recentPosts.map(recentPosts => (
 	  <li>
 		<div class="post-header">
 			<span class="title"><a href={`/posts/${recentPosts.slug}`}>{recentPosts.data.title}</a></span>
-			<span class="date">{recentPosts.data.datePublished}</span>
+      <span class="date">{new Date(recentPosts.data.dateModified).toISOString().split('T')[0]</span>
 			</div>
 			<ul class="tag-list">
 				{recentPosts.data.tags.map(tag => (
@@ -46,6 +46,7 @@ export async function get() {
 	  </li>
 	))}
   </ul>
+  
 
 </body>
 
