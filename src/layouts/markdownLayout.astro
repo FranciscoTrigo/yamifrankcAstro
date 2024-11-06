@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
-// import '../styles/global.css';
+import '../styles/global.css';
 import '../styles/prism-dark.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
@@ -12,7 +12,7 @@ const { frontmatter, content } = Astro.props;
 const isModifiedMoreRecent = new Date(frontmatter.dateModified) > new Date(frontmatter.datePublished);
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@16.0.0/dist/iosevka.css">
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
 
 <title>{frontmatter.title}</title>
 <Navigation />
