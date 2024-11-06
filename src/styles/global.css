@@ -1,5 +1,6 @@
 /* Global variables. */
 @import "https://cdn.jsdelivr.net/npm/iosevka@16.0.0/dist/iosevka.css";
+@import "tags.css";
 :root {
     /* Set sans-serif & mono fonts */
     --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
