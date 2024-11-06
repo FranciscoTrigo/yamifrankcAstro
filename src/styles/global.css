@@ -510,3 +510,9 @@ pre code {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 600px) {
+  :root {
+    --base-fontsize: 1.3rem; /* Adjust this value as needed */
+  }
+}
