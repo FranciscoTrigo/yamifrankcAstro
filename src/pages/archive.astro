@@ -10,7 +10,7 @@ const blogEntries = await getCollection('posts', ({ data }) => {
 })
 
 const recentPosts = blogEntries
-  .sort((a, b) => new Date(b.data.dateModified) - new Date(a.data.dateModified)) // Sort by dateUpdated in descending order
+  .sort((a, b) => new Date(b.data.datePublished) - new Date(a.data.datePublished)) // Sort by dateUpdated in descending order
 
 export async function get() {
   return {
@@ -33,7 +33,7 @@ export async function get() {
 	  <li>
 		<div class="post-header">
 			<span class="title"><a href={`/posts/${recentPosts.slug}`}>{recentPosts.data.title}</a></span>
-      <span class="date">{new Date(recentPosts.data.dateModified).toISOString().split('T')[0]</span>
+      <span class="date">{new Date(recentPosts.data.datePublished).toISOString().split('T')[0]</span>
 			</div>
 			<ul class="tag-list">
 				{recentPosts.data.tags.map(tag => (

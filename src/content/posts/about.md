@@ -7,11 +7,7 @@ tags: ["yamifrankc"]
 draft: false
 ---
 
+My name is YamiFrankc and this is my website/blog. I created it just to have some fun posting online and away from most social media. 
+This site is about everything that I like or feel interested about, so you will mainly find stuff about technology, videogames or about the internet. But also some other random stuff.
 
-
-My name is YamiFrankc and this is my website.  
-It exist mostly just for me to play around with stuff and have a website.  
-You will be able to find some content related to my hobbies and other stuff I like, like tech, videogames, electric guitar, homelabs or home automation.  
-
-I have worked in IT for a few years and currently I am a consultor at a small company.
-
+I've had an internet presence and created websited in one way or another since I was 10 years old, I've had a bunch of short-lived blogs and also administered a couple of forums (Popokemon was the most succesful one, over 200 registered users!
