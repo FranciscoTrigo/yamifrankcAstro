@@ -6,18 +6,22 @@ tags: ["homelab", "setup"]
 draft: false
 ---
 
+import { Image } from 'astro:assets';
+import firstLab from '../../assets/images/firstLab.jpg';
+import cleanOldRack from '../../assets/images/cleanOldRack.jpg';
+import quietRack from '../../assets/images/quietRack.jpg';
+
 Last year I finally decided to try to silence my rack a bit because, after years of having it in my room, its noise finally bothered me enough.  
 This is a showcase of how I did it.
-<!--more-->
 
 I started self-hosting around 2016 with a Raspberry Pi, it was used just a small network drive.  
 But then I quickly discovered how much it was possible to actually have at home by looking at other's setups and within a year I evolved to this:
 
-{{< figure src="firstLab.jpg" alt="Caca" caption="My first complete setup in its natural dusty environment." >}}
+<Image src={firstLab} alt="My first complete setup in its natural dusty environment." style={{ width: 'auto', height: 'auto' }}  />
 
 A few months went by and I finally got a proper rack for cheap somewhere on eBay:
 
-{{< figure src="cleanOldRack.jpg" alt="A rack" caption="My rack in their previous spot, right after cleaning..." >}}
+<Image src={firstLab} alt="My rack in their previous spot, right after cleaning." style={{ width: 'auto', height: 'auto' }}  />
 
 As you can see this rack is open on all sides, and while I managed to quieten the fans on the computer quite a bit just with software and by replacing some of them with quieter ones, the noise was still bothersome sometimes.
 
@@ -28,7 +32,7 @@ So with only a rough idea of what I wanted my dad and I went to Home Depot to lo
 
 Unfortunately I don't have many photos of the process, but we measured the opening on the sides of the rack, and cut the panels to the right size so they fit inside the openings, and then cut the MDF to cover the entire sides. We glued the parts together and made holes in the MDF so that they could be mounted easily on the rack. You can see the finished rack here:
 
-{{< figure src="quietRack.jpg" alt="A rack that is quiet" caption="The rack with the sides covered and inside a closet. Could have better cable management..." >}}
+<Image src={quietRack} alt="The rack with the sides covered and inside a closet. Could have better cable management..." style={{ width: 'auto', height: 'auto' }}  />
 
 This solution worked fine! While the noise is not gone completely, it has been reduced drastically, and the heat that comes out into the room is also reduced! (This is a welcomed byproduct, and the computers still have acceptable temperatures). I could probably improve it further by sticking an extra layer of sound-insulating foam, and I will probably do it the next time I open up the rack to work on it.
 
