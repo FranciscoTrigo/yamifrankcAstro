@@ -1,0 +1,39 @@
+---
+title: The Cloud Resume Challenge
+datePublished: 2024-03-10T11:23:36.000-06:00
+dateModified: 2024-03-10T11:23:36.000-06:00
+tags: ["AWS", "learning"]
+draft: false
+---
+
+As part of my career advancement journey, I decided to start the [Cloud Resume Challenge](https://cloudresumechallenge.dev/) to increase my chances at landing a Cloud Engineer role. This is the first of a series of blog posts about the process.
+
+## What is the Cloud Resume Challenge?
+
+> The Cloud Resume Challenge is a hands-on project designed to help you bridge the gap from cloud certification to cloud job. It incorporates many of the skills that real cloud and DevOps engineers use in their daily work.
+
+That is the official explanation on the site, created by [Forrest Brazeal](https://forrestbrazeal.com/). It is a 16-step project to gain hands-on experience that you can show to potential employers to get hired more easily.  
+I decided to take the challenge and follow the steps myself, in hopes of finding a job soon.
+
+## Step 1: Certification
+
+The first step of the project is to get the AWS Certified Cloud Practitioner certification. I've had this certification for quite a bit now, so I will skip this step.
+
+The main resource that I used was actually [AWS SKillbuilder](https://explore.skillbuilder.aws/learn), I totally recommend it if you are studying for one of their certifications.  
+
+## Step 2 and 3: HTML and CSS
+
+Step 2 consists of writing a resume in HTML. The challenge provides a good [example](https://codepen.io/emzarts/pen/OXzmym) that you can use as a starting point.  
+This is just a raw HTML file, so it's fairly simple to write it. The hardest part is figuring out the best way to word all your work accomplishments. 
+
+After fiddling around a bit wanting to have something that looks good, I decided to use [Json Resume](https://jsonresume.org/), a great tool that can generate templated html and pdf resumes from one json file. With it, I can focus on the content of the resume and not worry about the design myself. I created an `index.html` file with a header section that I will edit myself, and then I embeded the resume with `<iframe>` tags.
+
+You can see it in my [repo](https://github.com/FranciscoTrigo/cloudChallenge) for the challenge.
+
+{{< figure src="embededresume.png" alt="Quick look" caption="Quick look at what the resume looks like at the moment" >}}
+
+## Next steps
+
+In the next steps and blog post, I am going to upload this site to AWS so it can be accessed over the internet.  
+I am also going to deviate a bit and do a little extra because I will be migrating this blog from Netlify to AWS Amplify and use AWS CloudFront, S3 and Route53.  
+

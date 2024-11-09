@@ -1,0 +1,152 @@
+---
+title: Hacking together a Zigbee bed (or chair) sensor with no soldering
+datePublished: 2024-03-01T11:23:36.000-06:00
+dateModified: 2024-03-01T11:23:36.000-06:00
+tags: ["home automation"]
+draft: false
+---
+import { Image } from 'astro:assets';
+import opentoclose from '../../assets/images/opentoclose.png';
+import cableExample from '../../assets/images/cableexample.png';
+import wired from '../../assets/images/wired.jpg';
+import inbed from '../../assets/images/inbed.jpg';
+import openseat from '../../assets/images/openseat.jpg';
+import seat from '../../assets/images/seat.jpg';
+import HASEN1 from '../../assets/images/HASEN1.png';
+import hasen2 from '../../assets/images/hasen2.png';
+
+
+
+For a long time, I wanted to have a presence sensor that could see if I was lying on my bed.
+But never quite found what I needed, until now. I'll show you how I managed to make a usable bed (and chair!)
+sensor for cheap with easy-to-get parts and no soldering.
+
+:::tip
+
+This article contains links to products on Amazon and other sites, but none of them are part of an affiliate or similar and I do not get any money if you choose to purchase any of the products. 
+
+:::
+
+## The What
+I wanted to sense whether or not I was lying on my bed for some automation ideas that I had in mind, but my search for ready-to-go solutions turned out futile (except for [super expensive devices](https://www.sleepnumber.com/)). But in my quest for the right device, I found out about other people making their own bed sensor out of parts! Here are the videos that inspired me: [link1](https://www.youtube.com/watch?v=gZ1tmHesJXA) and [link2](https://www.youtube.com/watch?v=2tL7n8RRLBc).  
+ 
+Basically, all you need to do is to get a sensor that can feel when something is pushing on it and outputs a true or false signal, and something to connect it to your home automation system.  
+This could be done in one of many ways, for the sensor you can get something like this [car seat sensor](https://www.amazon.com/BuyWeek-Safety-Pressure-Universal-Warning/dp/B09WDCWX8K/ref=sr_1_3_pp?crid=1WURP3AXAI20G&dib=eyJ2IjoiMSJ9.KnLtG2aTAiU8VEmVbJ-cNBPsvNdWbakoIafK4lXi0SOzvL7c8r9ZEz0mNPczPAwreZ9LkI4s2CbUFrAXLMXQuqCT5J4P7HsplUkU0RDkYN7zqKXCH2X5-bIicyEp6Zyb-29lUZ36fvtzRbiYwmIwME12fRhFgfozqE9t9X887S5tGPjIzcOL_W16tlBEzqEvt8JY3Ngogna6mgHTcQdDhM6Z9T1JxOiiZvnhUVtJMLX1_Nqo_uU8f2cFUXWMPDlUqFgkMe9BeKQXUr_5xMT6wFcUQvlxrvfZQqhrsG_EgNQ.6VFle_cPYwSPYWzFswvMEu7D4WtIoZRt5AInzl7metc&dib_tag=se&qid=1708896501&sprefix=car%20seat%20senso,aps,190), or this [mat sensor](https://www.amazon.com/BuyWeek-Safety-Pressure-Universal-Warning/dp/B09WDCWX8K/ref=sr_1_3_pp?crid=1WURP3AXAI20G&dib=eyJ2IjoiMSJ9.KnLtG2aTAiU8VEmVbJ-cNBPsvNdWbakoIafK4lXi0SOzvL7c8r9ZEz0mNPczPAwreZ9LkI4s2CbUFrAXLMXQuqCT5J4P7HsplUkU0RDkYN7zqKXCH2X5-bIicyEp6Zyb-29lUZ36fvtzRbiYwmIwME12fRhFgfozqE9t9X887S5tGPjIzcOL_W16tlBEzqEvt8JY3Ngogna6mgHTcQdDhM6Z9T1JxOiiZvnhUVtJMLX1_Nqo_uU8f2cFUXWMPDlUqFgkMe9BeKQXUr_5xMT6wFcUQvlxrvfZQqhrsG_EgNQ.6VFle_cPYwSPYWzFswvMEu7D4WtIoZRt5AInzl7metc&dib_tag=se&qid=1708896501&sprefix=car%20seat%20senso,aps,190). And as for the device, you can use something like.  
+ 
+I will show you how I made mine and a few alternatives that you can try, and I will also show you how to integrate with your existing Home Assistant.  
+
+## Materials
+
+- Mat sensor or seat sensor
+- Aqara Zigbee door sensor
+- Wire cutters
+- Wire strippers
+- Electrical tape (optional)
+- Soldering Iron and lead (optional)
+
+### - Mat or seat sensor
+
+There are two main options here, you can either get a [car seat safety sensor](https://www.amazon.com/gp/product/B09WDCWX8K/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), or a [pressure mat alarm](https://www.amazon.com/gp/product/B00GUNX7WY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). There may be other options out there, but the important part is that they must have only two wires coming out of them and that the sensor closes/opens the circuit depending on whether pressure is applied to them or not. My recommendation for a bed sensor is the pressure mat, while the car seat sensor is more suited for chairs.
+
+### - Zigbee door sensor
+
+Door sensors are usually just simple on/off reed switches that come with a magnet, so they are a perfect pair to an open/close sensor like our mat. In my case I will use [Aqara door sensors](https://www.amazon.com/s?k=aqara+door+sensor&crid=13UU5JI6Y5976&sprefix=aqara+door+senso%2Caps%2C123&ref=nb_sb_noss_2) ones, they are easy to get and also have a nice enough quality. But you can choose any other brand that you prefer. 
+[Water leak sensors](https://www.amazon.com/Aqara-Water-Leak-Sensor-Kit/dp/B09WQPJBTQ/ref=sr_1_5?crid=1C3GQ7KP397QR&qid=1707037192&sprefix=aqara%20water,aps,146) also seem to be a great option, but I haven't personally used them.
+You can also use Z-Wave sensors if you want. How to make the sensor
+
+### Open your sensor and identify the reed switch
+
+You will be able to open most sensors just by prying with a thin tool like a guitar pick or a flat screwdriver.
+Some of them might have screws, but these are more rare.  
+Be sure to open only the bigger part (it probably has a small light and button too), the small part is just a magnet.  
+
+<Image src={opentoclose} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+Once it is open you need to identify the reed switch and its two sides. If you are using the Aqara this is very easy to do, the switch is big and its poles (or sides) are easily accessible.  
+
+Other sensors are different and harder to work with. I've tried with [this](https://www.amazon.com/gp/product/B09W8F3ZV1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) Tuya sensor, and it uses a different style of reed switch which is smaller and much harder to work with. Unfortunately I don't have a picture of it.
+
+### Prepare your pressure mat
+
+You need the pair of bare wires that are coming out of your pressure mat. It's possible that they already come like that, but they usually come with a plug already on them. You simply need to cut that off and strip off about 2cm of the insulation.  
+
+<Image src={cableExample} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+### Connect the stuff
+
+Now its time to connect your components. If you are using the Aqara or a similar one with the reed switch exposed, you will be able to just wrap the bare lead from the pressure mat into either and of the switch (see pictures). This is what I did, and then I wrapped the sensor with electrical tape.  
+
+<Image src={wired} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+Of course, if you want you can also solder if you want. Bear in mind that if your sensor looks more like the Tuya, you will have to solder the leads into the correct pads to make it work!
+I decided to leave the original sensor casing out of the finished product because it will be placed out of sight, but you might want to keep it. If you do, you will have to drill a hole in the casing to let the wires go through it.  
+Your sensor is ready to be used!
+
+### Considerations for placement and usage  
+
+#### Bed
+
+You will have to find the best way to place the sensor for your situation. In my case, I have a twin-sized bed, and while one pressure mat would be enough, I found out that sometimes it doesn't detect me lying on it, so I decided to add a second one. If you decide to add more than one "sensing point", all you need to do is to connect each one to either side of the reed switch. It will work with no problems since all they do is close and open the circuit.  
+ 
+This is how I placed the pads under my mattress. This covers up most places where I would lay and works much better than only one pad. Notice that I also added some cardboard to have a greater surface area for the pads to be pushed against (since the slats are quite far from each other). Your situation might be different depending on the size of your bed and your bed frame, but this example should be a good starting point.  
+
+<Image src={inbed} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+#### Chair
+
+Like I said before, this method can also be used for a chair sensor! For this use case, I would recommend sticking to the [car seat sensor](https://www.amazon.com/gp/product/B09WDCWX8K/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) sensor instead, since it's very thin and easier to place. Since I routinely change between my Herman Miller and my Capisco chair, I opted for putting my sensor inside a gel cushion like [this one](https://www.amazon.com/Gel-Seat-Cushion-Enhanced-Non-Slip/dp/B08C7HPTW5/ref=sr_1_5_pp?crid=2F28JX2FN7WL3&dib=eyJ2IjoiMSJ9.ByDAg8c7I8Tod4cWlY6KeEsCJoKvdJXZj8ztXTKeRFiWq5x9dyKlLS8FzdNkgnvNmah4B42QX0HeTgeN08qjXX6eSj-x3n2XZ3BgeDGg-aGiA4tvEGmiqaf7em1nOKpewY0aqD218HZ3IhWV1yBgt_AjPQdsPGzPNn8NfHzXen4RddkKoEDPP64dgLEsLJ67vrpWv_zLWth1Rv4zWCkQRPrWG0FHUYf9r77Z75VQMkg2451XCs0Zi-mIwYbr96y-axgVoiMXUyywT1B-VHJMOyQgj3siEKM8xXntrjVD09M.JFarn4__Z5560HvuV1mpYX2pGhUrlm7Ree--6ciGSMg&dib_tag=se&qid=1708896631&sprefix=gel+cushio,aps,178&th=1). It slides quite a bit, so I secured it with tape. Now I can transfer the sensor to anywhere I want.  
+
+<Image src={openseat} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+<Image src={seat} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+But If you don't plan on changing chairs you can just stick it on top of the seat, or under the cover if it allows for it.  
+
+## Integrating to Home Assistant
+
+Once your sensor is fabricated, you have to add it to your Home Assistant environment. How to do this will change depending on your exact integrations and settings, in my case, I am using Zigbee2MQTT  
+The important part here is to make sure that it works as intended for your automations. The normal behavior of the sensor would make it so that it is OFF when you are lying on it, and ON when you are not (this happens because the pad sensor would close the circuit just as the magnet on a door's frame would close the reed's switch). This can be semantically confusing, so we are going to create a custom template sensor to fix this issue.  
+
+We are going to modify the `config.yaml` and add this code to it:
+```yaml
+template:
+    - binary_sensor:
+      - name: "Bed occupancy"
+        state: "{{ is_state('binary_sensor.bed_contact', 'off') }}"
+        delay_off:
+          minutes: 5
+        icon: >
+          {% if is_state("binary_sensor.bed_occupancy", "on") %}
+            mdi:bed
+          {% else %}
+            mdi:bed-empty
+          {% endif %}
+```
+You will need to change `binary_sensor.bed_contact'` with the actual name that your sensor has in your HA.  
+ 
+We are basically creating a binary sensor that will be ON when the original sensor is OFF, and that will turn OFF when the sensor has been ON for 5 minutes. I added this delay to avoid quick repeated state changes when moving around in the bed or standing up to do something fast. You can play around with it or remote altogether if you don't need it.  
+
+Lastly, the last part will change the icon depending on the current state of the bed sensor.  
+
+For a chair, the code is practically the same:  
+```yaml
+template:
+    - binary_sensor:
+      - name: "Capisco Chair occupancy"
+        state: "{{ is_state('binary_sensor.capiscochair_contact', 'off') }}"
+        delay_off:
+          minutes: 3
+        icon: mdi:chair-rolling
+```
+<Image src={HASEN1} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+<Image src={hasen2} alt="A cool headless" style={{ width: '150px', height: 'auto' }}  />
+
+## Automations
+
+Of course, adding new sensors to your Home Assistant setup would be kind of dumb if you don't actually have uses for them. Here are some of the automations that I created since adding these sensors to my home:
+
+- Disable turning on the room light with motion if there is someone on the bed
+- Turn on my desk fan if I sit on the chair and the temperature is over a threshold
+- Turn on the lights in the morning when I step up from bed
+
+If you have any more ideas, don't hesitate to email them to me!
+
