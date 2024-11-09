@@ -10,8 +10,8 @@ const blogEntries = await getCollection('posts', ({ data }) => {
 })
 
 const recentPosts = blogEntries
-  .sort((a, b) => new Date(b.data.dateModified) - new Date(a.data.dateModified)) // Sort by dateUpdated in descending order
-  .slice(0, 5); // Limit to the 5 most recent posts
+  .sort((a, b) => new Date(b.data.datePublished) - new Date(a.data.datePublished)) // Sort by dateUpdated in descending order
+  .slice(0, 10); // Limit to the 5 most recent posts
 
 export async function get() {
   return {
@@ -30,7 +30,7 @@ export async function get() {
 <title>YamiFrankc</title>
 <body>
 <Image src={yamiLogo} alt="A cool logo." />
-<h3>New or recently updated posts:</h3>
+<h3>New posts:</h3>
 <ul class="title-list">
 	{recentPosts.map(recentPosts => (
 	  <li>
