@@ -25,11 +25,8 @@ const isModifiedMoreRecent = new Date(frontmatter.dateModified) > new Date(front
   ))}
 </ul>
 
-
 <p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
-{isModifiedMoreRecent && (
-    <p>Last modified on:  {new Date(frontmatter.dateModified).toISOString().split('T')[0]}</p>
-  )}
+
 
 <slot />
 

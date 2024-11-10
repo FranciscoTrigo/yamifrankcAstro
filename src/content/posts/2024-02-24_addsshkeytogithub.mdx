@@ -9,6 +9,14 @@ import { Image } from 'astro:assets';
 import button1 from '../../assets/images/button1.png';
 import Note from '../../components/Note.astro';
 
+import ImageWithCaption from '../../components/ImageWithCaption.astro';
+
+<ImageWithCaption 
+  src="../../assets/images/button1.png" 
+  alt="Small screenshot of what you would see." 
+  caption="Take at look." 
+/>
+
 ## Foreword
 
 A couple of years ago, GitHub changed some of their security policies and now you are not able to push (and sometimes pull) code to repositories with the normal username and password login method. You now need to use SSH keys.  
