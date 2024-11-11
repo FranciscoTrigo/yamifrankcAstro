@@ -7,9 +7,15 @@ draft: false
 ---
 import { Image } from 'astro:assets';
 import Strandberg from '../../assets/images/strandberg_front.png';
+import ImageWithCaption from '../../components/ImageWithCaption.astro';
 
 I have a Strandberg guitar.  
 It is pretty nice.  
 Wanted one for a long time.  
 Wao!  
-<Image src={Strandberg} alt="A cool headless" style={{ width: 'auto', height: 'auto' }}  />
+
+<ImageWithCaption 
+  src={Strandberg}
+  alt="My blue Strandberg. Its a headless guitar" 
+  caption="Photo of my Strandberg taken by Sweetwater" 
+/>

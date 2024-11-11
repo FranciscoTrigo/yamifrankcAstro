@@ -10,9 +10,8 @@ draft: false
 
 ## My sutff
 
+- [@Iospodito](https://www.instagram.com/isopodito_?igsh=MXJmem54bnh1bG1qNA==) - My fiancee's art account on Instagram, she is so talented!
 - [Memeboard](https://memeboard.yamifrankc.com) - A fun soundboard
-- [Blog](https://trigomijes.com) - A blog I made with Hugo. It has more serious content than this website.
-- [Chetumal](http://chetumal.xyz) - A Java Minecraft server that you can join. Geyser compatible. (23.230.3.65:25589)
 
 ## Blogs
 
