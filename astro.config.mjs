@@ -15,6 +15,8 @@ const srceryCode = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://yamifrankc.com',
+
   integrations: [expressiveCode({
     themes: [srceryCode],
     plugins: [pluginLineNumbers()],
