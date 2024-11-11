@@ -11,12 +11,6 @@ import Note from '../../components/Note.astro';
 
 import ImageWithCaption from '../../components/ImageWithCaption.astro';
 
-<ImageWithCaption 
-  src={button1}
-  alt="Small screenshot of what you would see." 
-  caption="Take at look." 
-/>
-
 
 ## Foreword
 
@@ -80,6 +74,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
+
 <Note>
 
 It is very important that you never share your private keys!
@@ -91,7 +86,11 @@ Only ever share and use your public key for anything that might need it.
 
 Now you can go to your GitHub [settings page](https://github.com/settings/keys) and click the button that says "New SSH Key" 
 
-<Image src={button1} alt="screenshot" style={{ width: 'auto', height: 'auto' }}  />
+<ImageWithCaption 
+  src={button1}
+  alt="Small screenshot of what you would see." 
+  caption="This is where you have to click" 
+/>
 
 Now you will be given two prompts. Give a descriptive title to this key, for example, "Manjaro desktop". In the next field, you need to paste the entire content of your `.pub` file (All of it).
 
