@@ -14,6 +14,7 @@ export async function GET(context) {
   return rss({
     title: 'YamiFrankc',
     description: 'A site',
+    site: context.site,
     items: rssItems,
   });
 
