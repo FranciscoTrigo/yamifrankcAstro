@@ -1,14 +1,10 @@
 ---
-export interface Props {
-  src: string;
-  alt: string;
-  caption: string;
-}
+import { Image } from 'astro:assets';
 
 const { src, alt, caption } = Astro.props;
 ---
 
 <figure style="text-align: center;">
-  <img src={src} alt={alt} />
+  <Image src={src} alt={alt} />
   <figcaption style="margin-top: 0.5em; font-style: italic;">{caption}</figcaption>
 </figure>
