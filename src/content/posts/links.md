@@ -13,6 +13,6 @@ draft: false
 - [@Iospodito](https://www.instagram.com/isopodito_?igsh=MXJmem54bnh1bG1qNA==) - My fiancee's art account on Instagram, she is so talented!
 - [Memeboard](https://memeboard.yamifrankc.com) - A fun soundboard
 
-## Blogs
+## Blog roll
 
 - [Joelchrono](https://joelchrono.xyz/) - I found his blog the other day. It seems cool!

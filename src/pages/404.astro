@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import yamiLogo from '/src/assets/images/yami.gif';
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
+---
+
+
+<Navigation />
+
+<title>404 Not found</title>
+<body>
+<Image src={yamiLogo} alt="A cool logo." />
+<p>This page does not exist!
+You should probably not be here.
+If you got here after following a link please <a href={`mailto:contact@yamifrankc.com?subject=404 Fix`}>email me to let me know.</a></p>
+
+  
+
+</body>
+
+<Foot />
