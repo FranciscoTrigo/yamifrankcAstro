@@ -10,7 +10,7 @@ draft: false
 
 ## My sutff
 
-- [@Iospodito](https://www.instagram.com/isopodito_?igsh=MXJmem54bnh1bG1qNA==) - My fiancee's art account on Instagram, she is so talented!
+- [@Iospodito](https://isopodito.com) - My fiancee's art website. Sometimes she does commissions, she is so talented!
 - [Memeboard](https://memeboard.yamifrankc.com) - A fun soundboard
 
 ## Blog roll
