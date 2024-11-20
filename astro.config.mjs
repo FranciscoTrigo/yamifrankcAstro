@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import { remarkModifiedTime } from './src/utils/remark-modified-time.mjs';
 import mdx from '@astrojs/mdx';
+import org from 'astro-org';
+import orgConfig from './src/utils/org-config.js';
 
 
 import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code';
@@ -17,7 +19,9 @@ const srceryCode = ExpressiveCodeTheme.fromJSONString(jsoncString)
 export default defineConfig({
     site: 'https://yamifrankc.com',
 
-  integrations: [expressiveCode({
+  integrations: [
+    org(orgConfig),
+    expressiveCode({
     themes: [srceryCode],
     plugins: [pluginLineNumbers()],
   }), mdx()],
