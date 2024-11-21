@@ -1,7 +1,7 @@
 #+title: My First Org File
 #+datePublished: 2024-11-10
 #+dateModified: 2024-11-20
-#+tags: astro org-mode
+#+tags: :astro:org:
 #+draft: false
 
 #+title: Index

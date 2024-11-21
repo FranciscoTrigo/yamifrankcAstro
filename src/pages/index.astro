@@ -29,7 +29,9 @@ export async function get() {
 
 <title>YamiFrankc</title>
 <body>
+<p class="logo">
 <Image src={yamiLogo} alt="A cool logo." />
+ </p>
 <h3>New posts:</h3>
 <ul class="title-list">
 	{recentPosts.map(recentPosts => (
@@ -49,5 +51,15 @@ export async function get() {
   
 
 </body>
+
+<style>
+	.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Removes default paragraph margins */
+  padding: -100; /* Removes any padding applied to the <p> */
+}
+</style>
 
 <Foot />
