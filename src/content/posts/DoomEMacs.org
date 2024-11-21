@@ -1,0 +1,47 @@
+#+title: Doom
+#+datePublished: 2024-11-21
+#+dateModified: 2024-11-21
+#+tags: :emacs:
+#+draft: false
+
+#+begin_export astro
+import { Image } from 'astro:assets';
+import Strandberg from '../../assets/images/strandberg_front.png';
+import ImageWithCaption from '../../components/ImageWithCaption.astro';
+#+end_export
+
+* Hello, person
+
+I know persons can be personal.
+
+[[http://google.com][Popokemon]]
+
+#+name: Doom code
+#+begin_src python
+pokemon = "venusaur"
+amig = "My fav pokemon is: " + pokemon
+return amig
+#+end_src
+
+#+RESULTS: Doom code
+: My fav pokemon is: venusaur
+
+#+CAPTION: This is a venusaur sprite
+#+NAME: Venusaur
+[[./venus.jpg]]
+
+#+name: export test
+#+begin_export astro
+<ImageWithCaption
+  src={Strandberg}
+  alt="My blue Strandberg. Its a headless guitar"
+  caption="Photo of my Strandberg taken by Sweetwater"
+/>
+#+end_export
+
+
+#+name: Pokemonsay
+#+begin_src shell
+~/bin/pokemonsay caca
+#+end_src
+
