@@ -27,7 +27,6 @@ return amig
 : My fav pokemon is: venusaur
 
 #+CAPTION: This is a venusaur sprite
-#+NAME: Venusaur
 [[./venus.jpg]]
 
 #+name: export test

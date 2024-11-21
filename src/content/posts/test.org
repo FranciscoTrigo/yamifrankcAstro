@@ -6,17 +6,32 @@
 
 #+title: Index
 iThis is the index inside the blog folder.
-#+TITLE: Welcome to My Blog
+#+TITLE: ORGOME
 
 Welcome to my blog! Here are some sections and links:
 
 - [[../][Sobre mi]]
 
-* Recent posts
+* ORGOM
+** ORG MODE
 
 #+NAME: Example Org Post with Code
-#+BEGIN_SRC javascript
-console.log("Hello, Org Mode with Prism.js!");
+#+BEGIN_SRC python
+import random
+
+secret_number = random.randint(1, 100)
+
+while True:
+    guess = int(input("Guess the number between 1 and 100: "))
+
+    if guess == secret_number:
+        print("Congratulations! You guessed the number!")
+        break
+    elif guess < secret_number:
+        print("Too low! Try again.")
+    else:
+        print("Too high! Try again.")
+
 #+END_SRC
 
 
