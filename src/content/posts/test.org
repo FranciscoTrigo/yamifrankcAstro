@@ -10,20 +10,25 @@ iThis is the index inside the blog folder.
 
 Welcome to my blog! Here are some sections and links:
 
-- [[file:about.html][Sobre mi]]
+- [[../][Sobre mi]]
 
 * Recent posts
-#+TITLE: Example Org Post with Code
+
+#+NAME: Example Org Post with Code
 #+BEGIN_SRC javascript
 console.log("Hello, Org Mode with Prism.js!");
 #+END_SRC
-#+NAME: Blog post list
-#+BEGIN_SRC bash 
+
+
+
+#+begin_src bash 
 echo "caca"
-#+END_SRC
+#+end_src
 
 #+RESULTS: Blog post list
+#+begin_example
 - [[file:2024-11-19-mastodon.org][Mastodon]]
 - [[file:2024-11-19-red-hat-power!.org][Red Hat power!]]
 
 - [[file:post1.org][Post 1]]
+#+end_example

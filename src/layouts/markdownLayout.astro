@@ -2,7 +2,7 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
-
+import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code';
 import '../styles/global.css';
 import '../styles/prism-dark.css';
 import Navigation from '../components/Navigation.astro';
@@ -18,13 +18,13 @@ const { frontmatter, content } = Astro.props;
 
 <h1>{frontmatter.title}</h1>
 <h2>{frontmatter.subtitle}</h2>
-<ul class="tag-list">
+<!-- <ul class="tag-list">
 {frontmatter.tags.map(tag => (
   <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
   ))}
-</ul>
+</ul> -->
 
-<p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
+<!-- <p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p> -->
 
 
 <slot />
