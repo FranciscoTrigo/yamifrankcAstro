@@ -16,6 +16,7 @@
     "@expressive-code/plugin-line-numbers": "^0.37.0",
     "astro": "^4.16.10",
     "astro-expressive-code": "^0.37.0",
+    "astro-org": "^2.1.2",
     "dayjs": "^1.11.13",
     "rehype-pretty-code": "^0.14.0",
     "simple-git": "^3.27.0"

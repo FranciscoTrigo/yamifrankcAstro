@@ -4,6 +4,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 
+import org from 'astro-org';
+
+
 import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
 import fs from 'node:fs';
@@ -19,14 +22,18 @@ const srceryCode = ExpressiveCodeTheme.fromJSONString(jsoncString)
 // https://astro.build/config
 export default defineConfig({
     site: 'https://yamifrankc.com',
-  integrations: [sitemap(),
+  integrations: [org(),
+    sitemap(),
     expressiveCode({
     themes: [srceryCode],
     plugins: [pluginLineNumbers()],
   }), mdx(), sitemap()],
 
-    markdown: {
-      syntaxHighlight: 'prism',
-      remarkPlugins: [remarkModifiedTime],
-    },
-  });
+markdown: {
+  syntaxHighlight: 'prism',
+  remarkPlugins: [remarkModifiedTime],
+},
+
+
+
+})

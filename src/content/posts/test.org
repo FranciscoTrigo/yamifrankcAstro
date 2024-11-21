@@ -1,0 +1,29 @@
+#+title: My First Org File
+#+datePublished: 2024-11-10
+#+dateModified: 2024-11-20
+#+tags: astro org-mode
+#+draft: false
+
+#+title: Index
+iThis is the index inside the blog folder.
+#+TITLE: Welcome to My Blog
+
+Welcome to my blog! Here are some sections and links:
+
+- [[file:about.html][Sobre mi]]
+
+* Recent posts
+#+TITLE: Example Org Post with Code
+#+BEGIN_SRC javascript
+console.log("Hello, Org Mode with Prism.js!");
+#+END_SRC
+#+NAME: Blog post list
+#+BEGIN_SRC bash 
+echo "caca"
+#+END_SRC
+
+#+RESULTS: Blog post list
+- [[file:2024-11-19-mastodon.org][Mastodon]]
+- [[file:2024-11-19-red-hat-power!.org][Red Hat power!]]
+
+- [[file:post1.org][Post 1]]

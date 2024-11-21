@@ -11,7 +11,10 @@ const blogCollection = defineCollection({
     tags: z.array(z.string()),
     draft: z.string(),
   }),
+  extensions: ['md', 'mdx', 'org'], // Add support for .org files
+  
 });
+
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {

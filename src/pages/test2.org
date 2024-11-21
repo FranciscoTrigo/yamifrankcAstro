@@ -1,0 +1,6 @@
+#+TITLE: test
+#+DATE: 2024-11-20
+#+TAGS: astro org-mode
+
+* Welcome to Org-Mode in Astro
+This is an example of using Org files as content in Astro.
