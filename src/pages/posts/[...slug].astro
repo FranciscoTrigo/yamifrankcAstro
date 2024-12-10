@@ -20,7 +20,7 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
 
 const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
   .utc()
-  .format("YYYY-MM-DD HH");
+  .format("YYYY-MM-DD");
 // End Get GIT last modified time
 
 import MarkdownLayout from '../../layouts/markdownLayout.astro'
@@ -29,6 +29,13 @@ import MarkdownLayout from '../../layouts/markdownLayout.astro'
 
 
 <MarkdownLayout frontmatter={entry.data}>
-  <p class="tag">Date Published: {new Date(entry.data.datePublished).toISOString().split('T')[0]} Last Modified: {lastModified}</p> 
+  <div class="dates"><span class="datepublished">Date Published: {new Date(entry.data.datePublished).toISOString().split('T')[0]} </span> {entry.data.datePublished !== lastModified && (<span class="datemodified">Last Modified: {lastModified}</span>)} 
+</div> 
   <Content />
 </MarkdownLayout>
+
+<style>
+  .dates span {
+  margin-right: 10px; /* Add space between spans */
+}
+</style>
