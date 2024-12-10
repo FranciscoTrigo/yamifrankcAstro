@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Foot from '../components/Foot.astro';
+
+---
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@16.0.0/dist/iosevka.css"> -->
+
+<Navigation />
+
+<title>Contact
+</title>
+<body>
+
+<h3>Guestbook</h3>
+
+
+<iframe src="https://yamifrankc.atabook.org/?page=1" style="border:none;"  height="1000" width="500" title="Guestbook"></iframe> 
+
+</body>
+
+<style>
+	.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -170px;
+  padding: 0; 
+}
+
+h3 {
+  margin-top: 0; 
+  margin-bottom: 0;
+}
+</style>
+
+<Foot />

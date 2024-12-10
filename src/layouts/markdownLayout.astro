@@ -20,14 +20,11 @@ const { frontmatter, content } = Astro.props;
 <h2>{frontmatter.subtitle}</h2>
 
 <!-- This block currently breaks ORG -->
-
 <ul class="tag-list">
 {frontmatter.tags.map(tag => (
   <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
   ))}
 </ul> 
-
-<p>Published: {new Date(frontmatter.datePublished).toISOString().split('T')[0]}</p>
 
 <!-- End of block that braks org -->
 <slot />

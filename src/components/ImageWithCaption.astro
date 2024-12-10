@@ -5,6 +5,6 @@ const { src, alt, caption } = Astro.props;
 ---
 
 <figure style="text-align: center;">
-  <Image src={src} alt={alt} />
+  <Image src={src} alt={alt} style={{ width: '650px', height: 'auto' }}/>
   <figcaption style="margin-top: 0.5em; font-style: italic;">{caption}</figcaption>
 </figure>

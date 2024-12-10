@@ -1,0 +1,66 @@
+---
+title: Learning to use yasnippet for emacs
+datePublished: 2024-11-22
+dateModified:
+tags: ["emacs"]
+draft: true
+---
+import { Image } from 'astro:assets';
+import yasnippet1 from '../../assets/images/yasnipet/emacs_yasninipet01.png';
+import yasnippet2 from '../../assets/images/yasnipet/yasnipet2.png';
+import ImageWithCaption from '../../components/ImageWithCaption.astro';
+
+I recently started (again!) learning how to use org-mode and emacs, and while my main use with emacs is just org-mode (to replace Obsidian), I want to start using it as a general editor. 
+
+I choose to use [Doom Emacs](https://github.com/doomemacs/doomemacs), it offers a lot of good defaults and packages that make it very easy to use, and  more importantly it has evil mode! (That is just Vim like keybinds).  
+
+Doom emacs comes bundled with a very useful package:  [yasnippet](https://github.com/joaotavora/yasnippet), it lets you expand text from small abbreviations into whatever you want. Its great for when you have to have to write something over and over (like function definitions or the alike). A lot of other editors have this feature too, its actually kinda standard. 
+
+## Using it
+
+Doom emacs comes with it preinstalled, so I did not have to do anything about it. Please follow the instructions on [Github](https://github.com/joaotavora/yasnippet) to install it, there is a pletora of ways to do it.
+
+Now let's start using it and add our first snippet. Push `M-x` (in emacs terms that would be Alt-x), this should open a buffer for you to run commands, we are going to do `yas-new-snipet`.
+
+<ImageWithCaption 
+  src={yasnippet1}
+  alt="Screenshot of my emacs" 
+  caption="This is a screenshot of emacs  writing this post. You can see the M-x menu here." 
+/>
+
+A new buffer with some text is going to open up. Here we will set up our snippet.
+
+``` lisp
+# -*- mode: snippet -*-
+# name:
+# key:
+# --
+```
+
+Name can be anything you want, set it to something recognizable.  
+Key is more important, it is the string of text that will be expanded.  
+Starting at line 5 you can write your actual snipet, it can be anything you want.  
+
+<ImageWithCaption 
+  src={yasnippet2}
+  alt="Screenshot 2 of my emacs" 
+  caption="Example of one of my snippets." 
+/>
+
+## Code substitution 
+
+A very powerful feature is code substitution. In the last screenshot you can see the following `(format-time-string "%Y-%m-%d")`,
+this is a small string of Lisp code that executes whenever I expand this snippet. It converts into the current date! 
+This means that you can insert pretty much anything you want (as long as you can write the code for it) with a few keystrokes!  
+
+Lets look at another neat example:
+
+```python title="python"
+def ${1:function_name}(${2:args}):
+    ${3:pass}
+```
+
+The `${1:function_name}` syntax lets you modify relevant parts of snippets on the fly. Lets say that you insert the previous snippet.
+Emacs will automatically take you to `${1:function_name}`, where you can start writting your function name right away. Press `Tab` when you finished
+and it will take you to `${2:args}`, and so on. This saves a lot of time!
+

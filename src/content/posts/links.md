@@ -2,7 +2,7 @@
 title: Links
 datePublished: 2024-10-04
 dateModified: 2024-10-15T15:37:42.000-06:00
-tags: ["cool", "web"]
+tags: ["cool", "web", "isopodito"]
 draft: false
 ---
 

@@ -5,6 +5,7 @@ import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Foot from '../components/Foot.astro';
 import { getCollection } from 'astro:content';
+
 const blogEntries = await getCollection('posts', ({ data }) => {
   return data.draft === false;
 })
@@ -32,7 +33,10 @@ export async function get() {
 <p class="logo">
 <Image src={yamiLogo} alt="A cool logo." />
  </p>
+ <p> Welcome to my website. Feel free to look around, see my <a href="/archive">blog posts</a>, learn <a href="posts/about">about me</a>, look at what I am <a href="posts/now">doing now</a> or jump to a random page!</p>
+
 <h3>New posts:</h3>
+
 <ul class="title-list">
 	{recentPosts.map(recentPosts => (
 	  <li>
