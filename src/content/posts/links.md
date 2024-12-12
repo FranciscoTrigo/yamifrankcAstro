@@ -10,7 +10,7 @@ draft: false
 
 ## My sutff
 
-- [@Iospodito](https://isopodito.com) - My fiancee's art website. Sometimes she does commissions, she is so talented!
+- [Iospodito](https://isopodito.com) - My fiancee's art website. Sometimes she does commissions, she is so talented!
 - [Memeboard](https://memeboard.yamifrankc.com) - A fun soundboard
 
 ## Blog roll

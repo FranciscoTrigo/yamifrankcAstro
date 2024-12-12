@@ -17,10 +17,10 @@ const { frontmatter, content } = Astro.props;
 <Navigation />
 
 <h1>{frontmatter.title}</h1>
-<h2>{frontmatter.subtitle}</h2>
+<!-- <h2>{frontmatter.subtitle}</h2> -->
 
 <!-- This block currently breaks ORG -->
-<ul class="tag-list">
+Tags: <ul class="tag-list">
 {frontmatter.tags.map(tag => (
   <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>
   ))}
@@ -29,6 +29,6 @@ const { frontmatter, content } = Astro.props;
 <!-- End of block that braks org -->
 <slot />
 
-<p><a href={`mailto:contact@yamifrankc.com?subject=Re:${frontmatter.title}`}>Email me about this post.</a></p>
+<p><a href={`mailto:comments@yamifrankc.com?subject=Re:"${frontmatter.title}"`}>Email me about this post.</a></p>
 
 <Foot />
