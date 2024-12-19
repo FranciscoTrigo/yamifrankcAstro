@@ -2,8 +2,8 @@
 title: Learning to use yasnippet for emacs
 datePublished: 2024-11-22
 dateModified:
-tags: ["emacs"]
-draft: true
+tags: ["emacs", "org-mode"]
+draft: false
 ---
 import { Image } from 'astro:assets';
 import yasnippet1 from '../../assets/images/yasnipet/emacs_yasninipet01.png';
@@ -18,9 +18,9 @@ Doom emacs comes bundled with a very useful package:  [yasnippet](https://github
 
 ## Using it
 
-Doom emacs comes with it preinstalled, so I did not have to do anything about it. Please follow the instructions on [Github](https://github.com/joaotavora/yasnippet) to install it, there is a pletora of ways to do it.
+Doom emacs comes with it preinstalled, so I did not have to do anything about it. Please follow the instructions on [Github](https://github.com/joaotavora/yasnippet) to install it, there is a plethora of ways to do it.
 
-Now let's start using it and add our first snippet. Push `M-x` (in emacs terms that would be Alt-x), this should open a buffer for you to run commands, we are going to do `yas-new-snipet`.
+Now let's start using it and add our first snippet. Push `M-x` (in emacs terms that would be Alt-x), this shoud open a buffer for you to run commands, we are going to do `yas-new-snipet`.
 
 <ImageWithCaption 
   src={yasnippet1}
@@ -61,6 +61,9 @@ def ${1:function_name}(${2:args}):
 ```
 
 The `${1:function_name}` syntax lets you modify relevant parts of snippets on the fly. Lets say that you insert the previous snippet.
-Emacs will automatically take you to `${1:function_name}`, where you can start writting your function name right away. Press `Tab` when you finished
+Emacs will automatically take you to `${1:function_name}`, where you can start writting your function name right away. Press `Tab` when you finish
 and it will take you to `${2:args}`, and so on. This saves a lot of time!
 
+## Ending
+
+And that is it. Now you can go to some file and start typing the key that you set, a small completion buffer will pop up giving you the option to expand into your snippet!
