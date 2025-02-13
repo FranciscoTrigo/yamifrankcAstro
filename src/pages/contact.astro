@@ -17,7 +17,7 @@ import Foot from '../components/Foot.astro';
 <p>You have a few options if you want to reach me, the best one is probably <a href="mailto:yami@yamifrankc.com">email.</a> <br>
 You can also find me at the 32-bit cafe <a href="https://discord.gg/tjCXYRSfKp">Discord</a>. </p>
 
-<p>Sometimes I hang out at IRC on <a href="irc.rizon.net">Rizon</a> and <a href="irc.retronode.org">RetroNode</a>, so you may catch me there. Im not on often though! </p>
+<p>Sometimes I hang out at IRC on <a href="irc.rizon.net">Rizon</a> (#yami) and <a href="irc.retronode.org">RetroNode</a> (#retronode), so you may catch me there. Im not on often though! </p>
 
 <p>While I do have a few social media accounts, I do not use them anymore and if you try to message me over there it will most likely go unnoticed. Please stick with email!
 </p>
@@ -26,11 +26,20 @@ You can also find me at the 32-bit cafe <a href="https://discord.gg/tjCXYRSfKp">
 <h3>Guestbook</h3>
 
 
-<iframe src="https://yamifrankc.atabook.org/?page=1" style="border:none;"  height="1000" width="500" title="Guestbook"></iframe> 
+<div class="guestbook">
+  <iframe src="https://yamifrankc.atabook.org/?page=1" style="border:none;" height="1000" width="500" title="Guestbook"></iframe>
+</div>
 
 </body>
 
 <style>
+
+.guestbook {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+}
 	.logo {
   display: flex;
   justify-content: center;
