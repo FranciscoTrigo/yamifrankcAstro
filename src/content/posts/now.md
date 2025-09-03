@@ -2,7 +2,7 @@
 title: Now
 datePublished: 2024-10-06
 dateModified: 2024-11-06T13:31:34.000-06:00
-tags: ["yamifrankc"]
+tags: ["yamifrankc", "self"]
 draft: false
 ---
 
