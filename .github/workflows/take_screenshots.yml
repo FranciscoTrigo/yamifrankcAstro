@@ -3,10 +3,10 @@ name: Take screenshots
 on:
   push:
     branches:
-      - main
+      - master
 
   schedule:
-    - cron: '25 23 * * 2'  # Every wednesday at 7:07am UTC
+    - cron: '30 23 * * 2'  # Every wednesday at 7:07am UTC
 
 jobs:
   take-screenshots:
