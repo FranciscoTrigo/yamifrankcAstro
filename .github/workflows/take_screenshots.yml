@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: '30 23 * * 2'  # Every wednesday at 7:07am UTC
+    - cron: '51 23 * * 2'  # Every wednesday at 7:07am UTC
 
 jobs:
   take-screenshots:
@@ -32,7 +32,7 @@ jobs:
           # commit that triggered this event -- jobs in this workflow will
           # push new commits and update main, and we want each job to
           # get the latest code from main.
-          ref: main
+          ref: master
 
           # Make sure we don't download the existing screenshots as part
           # of this process -- this Action is strictly append-only, so
@@ -72,4 +72,4 @@ jobs:
         run: |
           git add "$screenshot_path"
           git commit -m "Add screenshot for ${{ matrix.url }} for $today" || exit 0
-          git push origin main
+          git push origin master
