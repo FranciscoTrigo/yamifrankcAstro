@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: '51 23 * * 2'  # Every wednesday at 7:07am UTC
+    - cron: '56 23 * * 2'  # Every wednesday at 7:07am UTC
 
 jobs:
   take-screenshots:
@@ -65,7 +65,7 @@ jobs:
 
           npx playwright screenshot \
             --full-page \
-            --wait-for-load-state networkidle \
+            --wait-for-timeout 10000 \
             "${{ matrix.url }}" "$screenshot_path"
 
       - name: Push changes to GitHub
