@@ -6,7 +6,21 @@ tags: ["yamifrankc", "self"]
 draft: false
 ---
 
-## 2025-08-10
+## 2025-10-31
+
+I'm employed again, at a place and position that I worked before. Its not ideal, but much better than having no job.
+Its an on-site desktop support job, so I'm back to going to the office 5 days a week, at least its not the morning shift :P.
+
+Married life is going well, I like it.
+
+I played a bit of the new Donkey Kong Bananza, I like it. My wife has been playing mostly, tho.
+I also played the demo for the new Digimon Time Stranger game (on my Steam Deck!), it was cool. I want to buy the game but will wait until its on sale.
+
+We got a chameleon gecko! We called her Watechen. And we put it in a bio active vivarium. It is still growing.
+
+## Older
+
+### 2025-08-10
 
 I have been unemployed for a while, got laif off two months ago. Honestly, it was a very stresful job and it was both a relief and a burden to stop working there. I have been interviewing but currently searching for jobs.
 
@@ -16,8 +30,6 @@ I got a Switch 2 on launch day, and I really enjoyed playing Mario Kart World wi
 Still playing lots of Minecraft.
 
 And I also started watching Breaking bad.
-
-## Older
 
 ### No date
 
