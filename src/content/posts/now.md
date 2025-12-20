@@ -6,7 +6,17 @@ tags: ["yamifrankc", "self"]
 draft: false
 ---
 
-## 2025-10-31
+## 2025-12-19
+
+I am (trying to) return to NixOS and Doom Emacs.
+
+I had NixOS installed on my Framework laptop for a long time, but I have just been booting into Windows. I am now booting into NixOS and doing modifications to my config little by little when I have some free time.
+
+As for Doom Emacs, I use it mostly only for Org-mode, I want it to replace Obsidian. This is not the first time I try, once or twice a year I get super excited about it and then dive head first into configs and stuff. Hopefully it stays this time. In the past the main issue has been cross-platform compability, meaning Android and Windows.
+
+## Older
+
+### 2025-10-31
 
 I'm employed again, at a place and position that I worked before. Its not ideal, but much better than having no job.
 Its an on-site desktop support job, so I'm back to going to the office 5 days a week, at least its not the morning shift :P.
@@ -17,8 +27,6 @@ I played a bit of the new Donkey Kong Bananza, I like it. My wife has been playi
 I also played the demo for the new Digimon Time Stranger game (on my Steam Deck!), it was cool. I want to buy the game but will wait until its on sale.
 
 We got a chameleon gecko! We called her Watechen. And we put it in a bio active vivarium. It is still growing.
-
-## Older
 
 ### 2025-08-10
 
